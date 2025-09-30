@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIRUTECHX - Inicio</title>
+    <meta name="description" content="Venta de computadoras, laptops y accesorios.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="index.html" aria-label="VIRUTECHX inicio">
+            <img class="logo-img" src="https://scontent-bog2-1.cdninstagram.com/v/t51.2885-19/521275291_17877095157369844_727505869793390275_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDI0LmMyIn0&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QE8IwA05SuSaeD9xI54keE-Kbn55n4TVA36XPpg-w6jJoKMdOcPyr2x0q0Fz_mZr9c&_nc_ohc=B0eEuSYJY_UQ7kNvwHyWbCd&_nc_gid=jg2ycTF47y0NQLaJowJsGw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfaondYBLlSqEaVjR3RjeRRmffEX3-yPD4hSJa94aGNu2g&oe=68E1C79A&_nc_sid=8b3546" alt="VIRUTECHX logo" />
+            VIRUTECHX
+          </a>
+          <button class="btn menu-toggle" data-menu-toggle aria-label="Abrir menú">☰ Menú</button>
+          <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="quienes-somos.html">Quienes somos</a>
+            <a href="contacto.html">Contacto</a>
+            <a id="profileLink" href="perfil.html" style="display:none">Perfil</a>
+            <a id="adminLink" href="admin.html" style="display:none">Admin</a>
+          </div>
+          <div class="nav-actions">
+            <button id="cartBtn" class="btn cart-btn" aria-label="Abrir carrito">🛒 Carrito <span id="cartBadge" class="cart-badge">0</span></button>
+            <button id="loginBtn" class="btn">Iniciar sesión</button>
+            <button id="registerBtn" class="btn ghost">Registrarse</button>
+            <button id="logoutBtn" class="btn ghost" style="display:none">Cerrar sesión</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-card">
+            <div class="hero-inner">
+              <div>
+                <h1>Computadoras y laptops para cada necesidad</h1>
+                <p>Rendimiento y confiabilidad para trabajo, estudio y gaming. Envíos a todo el país.</p>
+                <a class="cta" href="servicios.html">Ver servicios</a>
+              </div>
+              <div>
+                <img alt="PC gamer" src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=1200&auto=format&fit=crop" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Productos destacados</h2>
+          <div id="home-products" class="grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>© <span id="year"></span> VIRUTECHX. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <header>Iniciar sesión</header>
+        <p class="muted">Accede con tu usuario o correo.</p>
+        <form id="login-form" novalidate>
+          <div class="input">
+            <label for="login-username">Usuario o correo</label>
+            <input id="login-username" type="text" placeholder="usuario o correo" required>
+            <div class="error" id="login-username-error"></div>
+          </div>
+          <div class="input">
+            <label for="login-password">Contraseña</label>
+            <input id="login-password" type="password" placeholder="********" required>
+            <div class="error" id="login-password-error"></div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Entrar</button>
+            <button type="button" class="btn" id="login-cancel">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cartBackdrop" class="drawer-backdrop"></div>
+    <aside id="cartDrawer" class="drawer" aria-hidden="true" aria-label="Carrito de compras">
+      <header>
+        <strong>Tu carrito</strong>
+        <button id="cartClose" class="btn ghost">Cerrar</button>
+      </header>
+      <div class="content" id="cartItems"></div>
+      <div class="footer">
+        <div class="total-line"><span>Total</span><strong id="cartTotal">$ 0</strong></div>
+        <div class="actions">
+          <button id="cartClear" class="btn">Vaciar</button>
+          <button id="cartCheckout" class="btn primary">Comprar</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <header>Crear cuenta</header>
+        <p class="muted">Registra usuario, correo y verifica con código.</p>
+        <form id="register-form" novalidate>
+          <div class="input">
+            <label for="reg-username">Usuario</label>
+            <input id="reg-username" type="text" placeholder="tu_usuario" required>
+            <div class="error" id="reg-username-error"></div>
+          </div>
+          <div class="input">
+            <label for="reg-email">Correo</label>
+            <input id="reg-email" type="email" placeholder="tu@email.com" required>
+            <div class="error" id="reg-email-error"></div>
+          </div>
+          <div class="form-row">
+            <div class="input">
+              <label for="reg-password">Contraseña</label>
+              <input id="reg-password" type="password" placeholder="********" required>
+              <div class="error" id="reg-password-error"></div>
+            </div>
+            <div class="input">
+              <label for="reg-password2">Repetir contraseña</label>
+              <input id="reg-password2" type="password" placeholder="********" required>
+              <div class="error" id="reg-password2-error"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input">
+              <label for="reg-code">Código de verificación (6 dígitos)</label>
+              <input id="reg-code" type="text" inputmode="numeric" pattern="\\d{6}" placeholder="123456">
+              <div class="error" id="reg-code-error"></div>
+            </div>
+            <div class="input">
+              <label>&nbsp;</label>
+              <button id="send-code" type="button" class="btn">Enviar código</button>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Registrarse</button>
+            <button type="button" class="btn" id="register-cancel">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+

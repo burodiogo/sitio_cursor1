@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel Admin - VIRUTECHX</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="admin.html">
+            <img class="logo-img" src="https://scontent-bog2-1.cdninstagram.com/v/t51.2885-19/521275291_17877095157369844_727505869793390275_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDI0LmMyIn0&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QE8IwA05SuSaeD9xI54keE-Kbn55n4TVA36XPpg-w6jJoKMdOcPyr2x0q0Fz_mZr9c&_nc_ohc=B0eEuSYJY_UQ7kNvwHyWbCd&_nc_gid=jg2ycTF47y0NQLaJowJsGw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfaondYBLlSqEaVjR3RjeRRmffEX3-yPD4hSJa94aGNu2g&oe=68E1C79A&_nc_sid=8b3546" alt="VIRUTECHX logo" />
+            VIRUTECHX
+          </a>
+          <div class="nav-actions">
+            <a href="index.html" class="btn">Ir al inicio</a>
+            <button id="loginBtn" class="btn">Iniciar sesión</button>
+            <button id="logoutBtn" class="btn ghost" style="display:none">Cerrar sesión</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>Administración</h2>
+        <div class="tabs">
+          <button id="tab-overview" class="tab active">Resumen</button>
+          <button id="tab-products" class="tab">Productos</button>
+        </div>
+
+        <!-- Resumen -->
+        <div id="panel-overview">
+          <p class="muted">Eventos recientes y métricas rápidas.</p>
+          <div class="card">
+            <div class="body">
+              <div class="actions">
+                <button id="ev-refresh" class="btn">Actualizar</button>
+                <button id="ev-clear" class="btn ghost">Limpiar eventos</button>
+            <button id="ev-clear-checkouts" class="btn ghost">Borrar checkouts</button>
+          <button id="ev-clear-users" class="btn ghost">Borrar usuarios y sesiones</button>
+              </div>
+              <div class="total-line" style="margin-top:8px">
+                <span>Vistas de página</span>
+                <strong id="metric-views">0</strong>
+              </div>
+              <div class="total-line">
+                <span>Productos añadidos al carrito</span>
+                <strong id="metric-adds">0</strong>
+              </div>
+              <div class="total-line">
+                <span>Checkouts</span>
+                <strong id="metric-checkouts">0</strong>
+              </div>
+              <div id="eventsList" style="max-height:420px; overflow:auto; margin-top:10px; display:grid; gap:8px"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Productos -->
+        <div id="panel-products" style="display:none">
+          <div class="card">
+            <div class="body">
+              <form id="product-form" class="form" style="display:grid; gap:10px; margin-bottom:12px">
+                <div class="form-row">
+                  <div class="input">
+                    <label for="p-name">Nombre</label>
+                    <input id="p-name" type="text" placeholder="Nombre del producto" required>
+                  </div>
+                  <div class="input">
+                    <label for="p-price">Precio</label>
+                    <input id="p-price" type="number" min="0" step="1" placeholder="0" required>
+                  </div>
+                </div>
+                <div class="input">
+                  <label for="p-id">ID</label>
+                  <input id="p-id" type="text" placeholder="identificador-unico" required>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn primary">Agregar</button>
+                  <button type="button" id="p-clear" class="btn">Limpiar</button>
+                </div>
+              </form>
+
+              <table class="table">
+                <thead>
+                  <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Acciones</th></tr>
+                </thead>
+                <tbody id="products-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>© <span id="year"></span> VIRUTECHX. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <header>Iniciar sesión</header>
+        <p class="muted">Accede con tu usuario para continuar.</p>
+        <form id="login-form" novalidate>
+          <div class="input">
+            <label for="login-username">Usuario</label>
+            <input id="login-username" type="text" placeholder="admin" required>
+            <div class="error" id="login-username-error"></div>
+          </div>
+          <div class="input">
+            <label for="login-password">Contraseña</label>
+            <input id="login-password" type="password" placeholder="admin" required>
+            <div class="error" id="login-password-error"></div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Entrar</button>
+            <button type="button" class="btn" id="login-cancel">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+

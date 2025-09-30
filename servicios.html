@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIRUTECHX - Servicios</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="index.html">
+            <img class="logo-img" src="https://scontent-bog2-1.cdninstagram.com/v/t51.2885-19/521275291_17877095157369844_727505869793390275_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDI0LmMyIn0&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QE8IwA05SuSaeD9xI54keE-Kbn55n4TVA36XPpg-w6jJoKMdOcPyr2x0q0Fz_mZr9c&_nc_ohc=B0eEuSYJY_UQ7kNvwHyWbCd&_nc_gid=jg2ycTF47y0NQLaJowJsGw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfaondYBLlSqEaVjR3RjeRRmffEX3-yPD4hSJa94aGNu2g&oe=68E1C79A&_nc_sid=8b3546" alt="VIRUTECHX logo" />
+            VIRUTECHX
+          </a>
+          <button class="btn menu-toggle" data-menu-toggle>☰ Menú</button>
+          <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="quienes-somos.html">Quienes somos</a>
+            <a href="contacto.html">Contacto</a>
+            <a id="profileLink" href="perfil.html" style="display:none">Perfil</a>
+            <a id="adminLink" href="admin.html" style="display:none">Admin</a>
+          </div>
+          <div class="nav-actions">
+            <button id="cartBtn" class="btn cart-btn" aria-label="Abrir carrito">🛒 Carrito <span id="cartBadge" class="cart-badge">0</span></button>
+            <button id="loginBtn" class="btn">Iniciar sesión</button>
+            <button id="registerBtn" class="btn ghost">Registrarse</button>
+            <button id="logoutBtn" class="btn ghost" style="display:none">Cerrar sesión</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>Nuestros servicios</h2>
+        <div class="grid">
+          <article class="card"><div class="thumb">Armado a medida</div><div class="body"><h3>PC a tu medida</h3><p class="muted">Configuraciones ideales según presupuesto.</p></div></article>
+          <article class="card"><div class="thumb">Mantenimiento</div><div class="body"><h3>Optimización</h3><p class="muted">Limpieza y puesta a punto de software.</p></div></article>
+          <article class="card"><div class="thumb">Soporte</div><div class="body"><h3>Soporte técnico</h3><p class="muted">Atención remota y presencial.</p></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>© <span id="year"></span> VIRUTECHX. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+
